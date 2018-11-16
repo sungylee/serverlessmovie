@@ -8,6 +8,7 @@ In this activity, you'll use the existing Movie Search HTML code to build a serv
 https://s3.amazonaws.com/moviesearchnow/index.html
 
 
+<<<<<<< HEAD
 ## Lambda /API Gateway Demo Page
 
 ![lambda](https://user-images.githubusercontent.com/40503899/48630980-8c65ae00-e98b-11e8-95cc-fb8f7272eecc.GIF)
@@ -19,3 +20,4 @@ https://s3.amazonaws.com/moviesearchnow/index.html
 ## DynamoDB
 
 ![dynamodb](https://user-images.githubusercontent.com/40503899/48630989-912a6200-e98b-11e8-9895-d417f279946d.GIF)
+=======
