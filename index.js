@@ -1,17 +1,5 @@
-
-//unit 19 serverless aws lambda
 var request = require('request');
 var AWS = require('aws-sdk');
-AWS.config.update({
-  region: 'us-east-1',
-  endpoint: 'http://dynamodb.us-east-1.amazonaws.com',
-  // accessKeyId default can be used while using the downloadable version of DynamoDB.
-  // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-  accessKeyId: `${process.env.accessKeyId}`,
-  // secretAccessKey default can be used while using the downloadable version of DynamoDB.
-  // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-  secretAccessKey: `${process.env.secretAccessKey}`
-});
 
 exports.handler = (event, context, callback) => {
   var url = `https://www.omdbapi.com/?t=${event.queryStringParameters.title}&plot=short&apikey=${process.env.ombdapikey}`
@@ -38,10 +26,10 @@ function addToDynamoDB(title){
   var params = {
     TableName:"movieTable",
     Item:{
-       name: 'Lambda Entry',
-       type : 'HTTP',
-       title: title,
-       timestamp:String(new Date().getTime())
+       'id': String(new Date().getTime()),
+       'name': 'Lambda Entry',
+       'type' : 'HTTP',
+       'title': title
     }
   };
 
